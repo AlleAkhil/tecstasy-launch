@@ -1,0 +1,28 @@
+<html lang="en">
+  <head>
+    <title>Tecstasy 2024</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <h2 class="title">GET READY!</h2>
+    <section>
+      <h2 class="inner-title">GET READY!</h2>
+    </section>
+    <div class="scroll-down"></div>
+    <button class="btn"><a href="./time/index.html">Click Me</a></button>
+  </body>
+  <script>
+    let section = document.querySelector("section");
+    window.addEventListener("scroll", function () {
+      let value = window.scrollY;
+      section.style.clipPath = "circle(" + value * 3 + "px at left center)";
+
+      if (value > 500) {
+        // Adjust the scroll threshold as needed
+        document.querySelector(".btn").classList.add("show");
+      } else {
+        document.querySelector(".btn").classList.remove("show");
+      }
+    });
+  </script>
+</html>

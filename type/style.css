@@ -1,0 +1,65 @@
+@import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+/* Base */
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.container {
+  text-align: center;
+}
+
+.row {
+  margin-bottom: 20px; /* Added margin between rows */
+}
+
+.first, .second {
+  position: relative;
+  color: hsl(0, 0%, 68%);
+  font-weight: bold;
+  font-family: "Anonymous Pro", monospace;
+  letter-spacing: 7px;
+  overflow: hidden;
+  border-right: 2px solid hsl(0, 0%, 80%);
+  white-space: nowrap;
+  display: inline-block; /* Changed display property to inline-block */
+  max-width: 100%; /* Set max-width to allow content to adjust */
+  animation: typewriter 4s steps(44) 1s 1 normal both, blinkTextCursor 500ms infinite; /* Added animation */
+}
+
+.second {
+  animation-delay: 6s; /* Delay second animation */
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blinkTextCursor {
+  from {
+    border-right-color: hsl(0, 0%, 80%);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+
+.second::after {
+  content: ''; /* Hide cursor */
+  position: absolute;
+  top: 0;
+  right: -2px; /* Adjust to align with border */
+  height: 100%;
+  width: 2px;
+  background-color: #000;
+}

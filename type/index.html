@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tecstasy 2024</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Additional CSS for responsiveness */
+        /* Phones in portrait orientation */
+        @media only screen and (max-width: 600px) {
+            .container {
+                width: 90%; /* Adjust width to fit smaller screens better */
+            }
+            .first, .second {
+                font-size: 16px; /* Adjust font size for better readability */
+                letter-spacing: 3px; /* Adjust letter spacing for better readability */
+                max-width: 100%; /* Ensure text does not overflow container */
+                white-space: pre-line; /* Allow word wrap to prevent overflow */
+            }
+        }
+
+        /* Phones in landscape orientation */
+        @media only screen and (max-width: 900px) and (orientation: landscape) {
+            .first, .second {
+                font-size: 18px; /* Adjust font size for better readability */
+                letter-spacing: 4px; /* Adjust letter spacing for better readability */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <h1 class="first">Unite for the Launch:</h1>
+        </div>
+        <div class="row">
+            <h1 class="second">Unveiling Tecstasy 2024 Poster Together!</h1>
+        </div>
+    </div>
+    <script>
+        // Wait for the second line animation to finish and then redirect the page
+        const secondLine = document.querySelector('.second');
+        const animationDuration = 12000; // Duration of second line animation in milliseconds
+
+        setTimeout(() => {
+            window.location.href = '../main/index.html';
+        }, animationDuration);
+    </script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #222;
+}
+
+.box{
+    position: relative;
+    width: 1400px;
+    height: 600px;
+}
+
+.box::before{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-conic-gradient(from var(--a),#0f0,#ff0,#0ff,#f0f,#0ff);
+    border-radius: 20px;
+    animation: rotating 4s linear infinite;
+}
+
+.box::after{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-conic-gradient(from var(--a),#0f0,#ff0,#0ff,#f0f,#0ff);
+    border-radius: 20px;
+    animation: rotating 4s linear infinite;
+    filter: blur(40px);
+    opacity: 0.75;
+}
+
+.box span{
+    position: absolute;
+    inset: 4px;
+    background: #222;
+    border-radius: 16px;
+    z-index: 1;
+    opacity: 0; /* Initially hide the image */
+    animation: fadeInImage 4s ease-in-out forwards;
+}
+img{
+    width: 1390px;
+    height: 592px;
+    border-radius: 2%;
+}
+@property --a{
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+}
+@keyframes rotating{
+    0%{
+        --a: 0deg;
+    }
+    100%{
+        --a: 360deg;
+    }
+}
+
+@keyframes fadeInImage {
+    0% {
+        opacity: 0; /* Start with opacity 0 */
+    }
+    100% {
+        opacity: 1; /* Gradually fade in the image */
+    }
+}
+
+/* Media query for smaller devices */
+@media (max-width: 768px) {
+    .box {
+        width: 95%; /* Adjusted width for smaller screens */
+    }
+    img {
+        max-width: 100%; /* Ensure image does not exceed container width */
+    }
+}
+
+/* Media query for tablets and larger smartphones */
+@media (max-width: 1024px) {
+    .box {
+        max-width: 90%; /* Adjusted maximum width for tablets */
+    }
+    img {
+        max-width: 100%; /* Ensure image does not exceed container width */
+    }
+}
+
+/* Media query for larger desktop screens */
+@media (min-width: 1200px) {
+    .box {
+        max-width: 1200px; /* Adjusted maximum width for larger desktop screens */
+    }
+    img {
+        max-width: 100%; /* Ensure image does not exceed container width */
+    }
+}
+
